@@ -54,7 +54,7 @@ public class GamePad extends JFrame {
 	/*
 	 * Counts the non-mine cells on the scene that has been clicked. Required
 	 * for checking user win.
-	 * 
+	 *
 	 * Main function: increaseGoodCellCount();
 	 */
 	private static int goodCellCount = 0;
@@ -77,7 +77,7 @@ public class GamePad extends JFrame {
 	/*
 	 * Determines that is game started. This variable is used to check when to
 	 * start the timer.
-	 * 
+	 *
 	 * Main function: MineButtons Mouse Handler
 	 */
 	private static boolean _isGameStarted = false;
@@ -162,7 +162,7 @@ public class GamePad extends JFrame {
 		gameNameBox = Box.createHorizontalBox();
 		headerPanel.add(gameNameBox, BorderLayout.EAST);
 
-		lblGameStatus = new JLabel("\u0645\u062A\u0646 \u0645\u062A\u063A\u06CC\u0631");
+		lblGameStatus = new JLabel("Variable text");
 		lblGameStatus.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblGameStatus.setForeground(Color.GRAY);
 		gameNameBox.add(lblGameStatus);
@@ -170,7 +170,7 @@ public class GamePad extends JFrame {
 		horizontalStrut_4 = Box.createHorizontalStrut(8);
 		gameNameBox.add(horizontalStrut_4);
 
-		lblNewLabel_1 = new JLabel("\u0645\u06CC\u0646 \u0631\u0648\u0628");
+		lblNewLabel_1 = new JLabel("minesweeper");
 		lblNewLabel_1.setAlignmentX(0.5f);
 		gameNameBox.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(new Color(51, 153, 255));
@@ -204,7 +204,7 @@ public class GamePad extends JFrame {
 		horizontalStrut_2 = Box.createHorizontalStrut(5);
 		gameTextBox.add(horizontalStrut_2);
 
-		lblGameTime = new JLabel("000 \u062B\u0627\u0646\u06CC\u0647");
+		lblGameTime = new JLabel("000 Second");
 		lblGameTime.setForeground(SystemColor.textHighlight);
 		lblGameTime.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblGameTime.setAlignmentX(0.5f);
@@ -229,7 +229,7 @@ public class GamePad extends JFrame {
 		contentPane.add(footerPanel, BorderLayout.SOUTH);
 
 		label = new JLabel(
-				"\u0637\u0631\u0627\u062D\u06CC \u0648 \u0628\u0631\u0646\u0627\u0645\u0647 \u0646\u0648\u06CC\u0633\u06CC \u062A\u0648\u0633\u0637 \u0622\u0631\u06CC\u0646 \u0627\u0628\u0631\u0627\u0647\u06CC\u0645 \u067E\u0648\u0631 \u060C \u062F\u0627\u0646\u0634\u06AF\u0627\u0647 \u06AF\u06CC\u0644\u0627\u0646");
+				"Design and programming by myGroup, International University");
 		label.setForeground(Color.DARK_GRAY);
 		label.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		footerPanel.add(label);
@@ -239,7 +239,7 @@ public class GamePad extends JFrame {
 	/**
 	 * Constructor used when loading a game without setting game variables
 	 * Usually used when loading game from serialized object
-	 * 
+	 *
 	 * @param load
 	 *            Is game loaded
 	 */
@@ -255,7 +255,7 @@ public class GamePad extends JFrame {
 	/**
 	 * Constructor used when loading a game with setting game variables Usually
 	 * used when creating a new game
-	 * 
+	 *
 	 * @param load
 	 * @param mineW
 	 * @param mineH
@@ -360,8 +360,8 @@ public class GamePad extends JFrame {
 			@Override
 			public void run() {
 				JOptionPane.showMessageDialog(null,
-						"\u0645\u062A\u0627\u0633\u0641\u0627\u0646\u0647 \u0634\u0645\u0627 \u0628\u0627\u062E\u062A\u06CC\u062F. \u0628\u0631\u0627\u06CC \u0627\u06CC\u062C\u0627\u062F \u0628\u0627\u0632\u06CC \u062C\u062F\u06CC\u062F \u0648\u0627\u0631\u062F \u0645\u0646\u0648 \u0627\u0635\u0644\u06CC \u062E\u0648\u0627\u0647\u06CC\u062F \u0634\u062F",
-						"\u0628\u0627\u0632\u06CC \u062F\u0648\u0628\u0627\u0631\u0647",
+						"Unfortunately, you lost. You will enter the main menu to create a new game",
+						"Play again",
 						JOptionPane.INFORMATION_MESSAGE);
 				MainMenu.main(null);
 				for (Frame frame : getFrames())
@@ -386,7 +386,7 @@ public class GamePad extends JFrame {
 	public static void updateTimeTimer() {
 		timeCount++;
 		lblGameTime.setText(PersianNumeric.toPersianNumberic(String.format("%03d", timeCount))
-				+ " \u062B\u0627\u0646\u06CC\u0647");
+				+ " Second");
 	}
 
 	/**
@@ -396,25 +396,25 @@ public class GamePad extends JFrame {
 		String gameStatus = "( ";
 		if (isLoadedGame)
 			// UnicodeText: Persian (Edame)
-			gameStatus += "\u0627\u062F\u0627\u0645\u0647 \u0628\u0627\u0632\u06CC ";
+			gameStatus += "Continue the game ";
 		else
 			// UnicodeText: Persian (New Game)
-			gameStatus += "\u0628\u0627\u0632\u06CC \u062C\u062F\u06CC\u062F ";
+			gameStatus += "New game";
 
 		// UnicodeText: Persian (Dar Zamine)
-		gameStatus += "\u062F\u0631 \u0632\u0645\u06CC\u0646 ";
+		gameStatus += "On Earth ";
 		gameStatus += mineWidth;
 
 		// UnicodeText: Persian (Dar)
-		gameStatus += " \u062F\u0631 ";
+		gameStatus += " At";
 		gameStatus += mineHeight;
 
 		// UnicodeText: Persian (Ba)
-		gameStatus += " \u0628\u0627 ";
+		gameStatus += " With ";
 		gameStatus += minePercentage;
 
 		// UnicodeText: Persian (Ba Darsad Min)
-		gameStatus += " \u062F\u0631\u0635\u062F \u0645\u06CC\u0646 )";
+		gameStatus += " The percentage of mine )";
 
 		lblGameStatus.setText(PersianNumeric.toPersianNumberic(gameStatus));
 
@@ -470,7 +470,7 @@ public class GamePad extends JFrame {
 	/**
 	 * Checks if the block doesn't have any mines nearby This function works in
 	 * a recursive way
-	 * 
+	 *
 	 * @param id
 	 *            index of the block
 	 * @param w
@@ -593,11 +593,11 @@ public class GamePad extends JFrame {
 		timeCount = saveData.getTimeCount();
 		minePercentage = saveData.getMineTrafic();
 		lblGameTime.setText(PersianNumeric.toPersianNumberic(String.format("%03d", timeCount))
-				+ " \u062B\u0627\u0646\u06CC\u0647");
+				+ " Second");
 
 		startTimer();
-		
-		
+
+
 		// +1 show hgap size:
 		int panelBoundWidth = (mineWidth + 1) * buttonSizePixel;
 		// +1 show vgap size:
@@ -608,7 +608,7 @@ public class GamePad extends JFrame {
 		mineList = saveData.getMineList();
 
 		pnlGameMines.setBounds(0, 0, panelBoundWidth, panelBoundHeight); // Setting
-																			// panelSize
+		// panelSize
 
 		int freeHorizonalSpace = (getSize().width - 20) - pnlGameMines.getSize().width;
 		int freeVerticalSpace = (getSize().height - 40 - 65) - pnlGameMines.getSize().height;
@@ -645,19 +645,19 @@ public class GamePad extends JFrame {
 	}
 
 	class windowClosingClass extends WindowAdapter {
-		
+
 		/**
 		 * Saves the game before closing the form
 		 */
 		@Override
 		public void windowClosing(WindowEvent e) {
-			
+
 			super.windowClosing(e);
-			
+
 			ArrayList<SavingElement> elementsList = new ArrayList<>();
-			
+
 			for (int i = 0; i < mineWidth * mineHeight; i++) {
-				
+
 				MineButton mineButton = (MineButton) pnlGameMines.getComponents()[i];
 
 				cellStyle style;
@@ -670,7 +670,7 @@ public class GamePad extends JFrame {
 					style = cellStyle.UNSELECTED_UNMARKED;
 
 				elementsList.add(new SavingElement(style, mineButton.getText()));
-				
+
 			}
 			GameSave saver = new GameSave(mineWidth, mineHeight, goodCellCount, timeCount, minePercentage, mineList,
 					elementsList);
