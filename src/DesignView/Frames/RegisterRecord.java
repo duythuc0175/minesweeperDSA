@@ -80,7 +80,7 @@ public class RegisterRecord extends JDialog {
 			contentPanel.add(label);
 		}
 		{
-			JLabel label = new JLabel("\u062B\u0628\u062A \u0632\u0645\u0627\u0646");
+			JLabel label = new JLabel("Time Recording");
 			label.setVerticalAlignment(SwingConstants.BOTTOM);
 			label.setForeground(Color.BLACK);
 			label.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -88,7 +88,8 @@ public class RegisterRecord extends JDialog {
 			contentPanel.add(label);
 		}
 		{
-			JLabel label = new JLabel("<html>\r\n<body><p style=\"margin-right:28px\">\r\n\u0632\u0645\u0627\u0646 \u062E\u0648\u062F \u0631\u0627 \u062B\u0628\u062A \u06A9\u0646\u06CC\u062F\r\n</p></body>\r\n</html>");
+			JLabel label = new JLabel("<html>\r\n<body><p style=\"margin-right:28px\">Record " +
+					"your time</p></body>\r\n</html>");
 			label.setVerticalAlignment(SwingConstants.TOP);
 			label.setHorizontalAlignment(SwingConstants.RIGHT);
 			label.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.LIGHT_GRAY));
@@ -96,7 +97,7 @@ public class RegisterRecord extends JDialog {
 			contentPanel.add(label);
 		}
 		{
-			JLabel label = new JLabel("\u0646\u0627\u0645 \u0628\u0627\u0632\u06CC\u06A9\u0646:");
+			JLabel label = new JLabel("Player name:");
 			label.setVerticalAlignment(SwingConstants.BOTTOM);
 			label.setForeground(Color.BLACK);
 			label.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -104,7 +105,7 @@ public class RegisterRecord extends JDialog {
 			contentPanel.add(label);
 		}
 		{
-			JLabel label = new JLabel("\u0627\u0645\u062A\u06CC\u0627\u0632:");
+			JLabel label = new JLabel("Score:");
 			label.setVerticalAlignment(SwingConstants.BOTTOM);
 			label.setForeground(Color.BLACK);
 			label.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -136,17 +137,17 @@ public class RegisterRecord extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.LEFT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("\u062B\u0628\u062A \u0631\u06A9\u0648\u0631\u062F");
+				JButton okButton = new JButton("Record keeping");
 				okButton.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseReleased(MouseEvent arg0) {
 						if (txtField.getText().trim() == "") JOptionPane.showMessageDialog(null, 
-								"\u0644\u0637\u0641\u0627 \u0646\u0627\u0645\u06CC \u0631\u0627 \u0648\u0627\u0631\u062F \u06A9\u0646\u06CC\u062F",
-								"\u0627\u062E\u0637\u0627\u0631",
+								"Please enter your name",
+								"Warning",
 								JOptionPane.WARNING_MESSAGE);
 						else if(txtField.getText().contains(",") || txtField.getText().contains("|")) JOptionPane.showMessageDialog(null, 
-								"\u0644\u0637\u0641\u0627 \u0646\u0627\u0645\u06CC \u0631\u0627 \u06A9\u0647 \u0634\u0627\u0645\u0644 \u06A9\u0627\u0631\u0627\u06A9\u062A\u0631 \u0647\u0627\u06CC \u063A\u06CC\u0631 \u0645\u062C\u0627\u0632 \u0646\u0628\u0627\u0634\u062F \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\u06CC\u062F",
-								"\u0627\u062E\u0637\u0627\u0631",
+								"Please choose a name that contains illegal characters",
+								"Warning",
 								JOptionPane.WARNING_MESSAGE);
 						else{
 							registredName = txtPlayerName.getText();
@@ -159,7 +160,7 @@ public class RegisterRecord extends JDialog {
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
-				JButton cancelButton = new JButton("\u0628\u06CC\u062E\u06CC\u0627\u0644");
+				JButton cancelButton = new JButton("Never Mind");
 				cancelButton.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseReleased(MouseEvent arg0) {
