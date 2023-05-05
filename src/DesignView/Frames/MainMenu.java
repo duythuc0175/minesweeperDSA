@@ -199,7 +199,7 @@ public class MainMenu extends JFrame {
 
 		mainPanel.add(lblBtn_Startgame);
 
-		lblBtn_Endgame = new JLabel("Exit game", SwingConstants.RIGHT);
+		lblBtn_Endgame = new JLabel("Exit the game", SwingConstants.RIGHT);
 		lblBtn_Endgame.setName("exitBtn");
 		lblBtn_Endgame.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Exit Sign-32.png")));
 		lblBtn_Endgame.setOpaque(true);
