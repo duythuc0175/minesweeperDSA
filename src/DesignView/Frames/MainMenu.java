@@ -193,7 +193,7 @@ public class MainMenu extends JFrame {
 		lblBtn_Startgame.setBounds(100, 21, 293, 39);
 		lblBtn_Startgame.setBorder(new LineBorder(new Color(192, 192, 192)));
 		lblBtn_Startgame.setHorizontalTextPosition(SwingConstants.RIGHT);
-		lblBtn_Startgame.setIconTextGap(5);
+		lblBtn_Startgame.setIconTextGap(10);
 		lblBtn_Startgame.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		lblBtn_Startgame.addMouseListener(new LabelButtons(this).createMouseListener()); 
 		
@@ -203,7 +203,7 @@ public class MainMenu extends JFrame {
 		lblBtn_Endgame.setName("exitBtn");
 		lblBtn_Endgame.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Exit Sign-32.png")));
 		lblBtn_Endgame.setOpaque(true);
-		lblBtn_Endgame.setIconTextGap(5);
+		lblBtn_Endgame.setIconTextGap(10);
 		lblBtn_Endgame.setHorizontalTextPosition(SwingConstants.RIGHT);
 		lblBtn_Endgame.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblBtn_Endgame.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -217,7 +217,7 @@ public class MainMenu extends JFrame {
 		lblBtn_Loadgame.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Explosion-load32.png")));
 		lblBtn_Loadgame.setOpaque(true);
 		lblBtn_Loadgame.setName("loadBtn");
-		lblBtn_Loadgame.setIconTextGap(5);
+		lblBtn_Loadgame.setIconTextGap(10);
 		lblBtn_Loadgame.setHorizontalTextPosition(SwingConstants.RIGHT);
 		lblBtn_Loadgame.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblBtn_Loadgame.setBorder(new LineBorder(new Color(192, 192, 192)));
@@ -233,7 +233,7 @@ public class MainMenu extends JFrame {
 		lblBtn_Scoreboard.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Ratings-32.png")));
 		lblBtn_Scoreboard.setOpaque(true);
 		lblBtn_Scoreboard.setName("recordsBtn");
-		lblBtn_Scoreboard.setIconTextGap(5);
+		lblBtn_Scoreboard.setIconTextGap(10);
 		lblBtn_Scoreboard.setHorizontalTextPosition(SwingConstants.RIGHT);
 		lblBtn_Scoreboard.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblBtn_Scoreboard.setBorder(new LineBorder(new Color(192, 192, 192)));
