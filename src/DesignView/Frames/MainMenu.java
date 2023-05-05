@@ -128,7 +128,7 @@ public class MainMenu extends JFrame {
 		headerPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-		lblNewLabel_1 = new JLabel("Minesweeper Game");
+		lblNewLabel_1 = new JLabel("Minesweeper game");
 		lblNewLabel_1.setForeground(new Color(0, 102, 153));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		panel.add(lblNewLabel_1);
@@ -171,7 +171,7 @@ public class MainMenu extends JFrame {
 		minerHSeter.setBounds(100, 87, 94, 20);
 		mainPanel.add(minerHSeter);
 
-		label_1 = new JLabel("mine(percent):");
+		label_1 = new JLabel("mines(percentages):");
 		label_1.setForeground(Color.DARK_GRAY);
 		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_1.setBounds(257, 115, 136, 14);
