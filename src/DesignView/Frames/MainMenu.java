@@ -128,7 +128,7 @@ public class MainMenu extends JFrame {
 		headerPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-		lblNewLabel_1 = new JLabel("Minesweeper game");
+		lblNewLabel_1 = new JLabel("Minesweepergame");
 		lblNewLabel_1.setForeground(new Color(0, 102, 153));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		panel.add(lblNewLabel_1);
