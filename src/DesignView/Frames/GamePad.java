@@ -360,7 +360,7 @@ public class GamePad extends JFrame {
 			@Override
 			public void run() {
 				JOptionPane.showMessageDialog(null,
-						"Unfortunately, you lost. You will enter the main menu to create a new game",
+						"Unfortunately, you lost. You will enter the main menu to create a new game.",
 						"Play again",
 						JOptionPane.INFORMATION_MESSAGE);
 				MainMenu.main(null);
