@@ -171,7 +171,7 @@ public class MainMenu extends JFrame {
 		minerHSeter.setBounds(100, 87, 94, 20);
 		mainPanel.add(minerHSeter);
 		
-		label_1 = new JLabel("\u0645\u06CC\u0646 \u0647\u0627 (\u062F\u0631\u0635\u062F):");
+		label_1 = new JLabel("mines (percentage):");
 		label_1.setForeground(Color.DARK_GRAY);
 		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_1.setBounds(257, 115, 136, 14);
