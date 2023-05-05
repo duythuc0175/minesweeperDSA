@@ -184,7 +184,7 @@ public class MainMenu extends JFrame {
 		minerPerSeter.setBounds(100, 109, 94, 20);
 		mainPanel.add(minerPerSeter);
 		
-		lblBtn_Startgame = new JLabel("\u0634\u0631\u0648\u0639 \u0628\u0627\u0632\u06CC \u062C\u062F\u06CC\u062F", 
+		lblBtn_Startgame = new JLabel("Start",
 				SwingConstants.RIGHT);
 		lblBtn_Startgame.setName("startBtn");
 		lblBtn_Startgame.setFont(new Font("Tahoma", Font.PLAIN, 12));
