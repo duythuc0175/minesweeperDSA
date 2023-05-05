@@ -144,7 +144,7 @@ public class MainMenu extends JFrame {
 		
 		
 		
-		lblNewLabel_4 = new JLabel("\u0637\u0648\u0644 \u0632\u0645\u06CC\u0646 \u0628\u0627\u0632\u06CC (\u062D\u062F\u0627\u06A9\u062B\u0631 \u06F3\u06F5):");
+		lblNewLabel_4 = new JLabel("The length of the playground (maximum 35):");
 		lblNewLabel_4.setForeground(Color.DARK_GRAY);
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel_4.setBounds(257, 71, 136, 14);
@@ -158,7 +158,7 @@ public class MainMenu extends JFrame {
 		
 		mainPanel.add(minerWSeter);
 		
-		label = new JLabel("\u0639\u0631\u0636 \u0632\u0645\u06CC\u0646 \u0628\u0627\u0632\u06CC (\u062D\u062F\u0627\u06A9\u062B\u0631 \u06F2\u06F5):");
+		label = new JLabel("Width of the playground (maximum 25):");
 		label.setForeground(Color.DARK_GRAY);
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		label.setBounds(257, 93, 136, 14);
