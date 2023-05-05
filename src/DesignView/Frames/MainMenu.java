@@ -185,26 +185,26 @@ public class MainMenu extends JFrame {
 		mainPanel.add(minerPerSeter);
 		
 		lblBtn_Startgame = new JLabel("Start",
-				SwingConstants.RIGHT);
+				SwingConstants.CENTER);
 		lblBtn_Startgame.setName("startBtn");
 		lblBtn_Startgame.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblBtn_Startgame.setOpaque(true);
 		lblBtn_Startgame.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Explosion-32.png")));
 		lblBtn_Startgame.setBounds(100, 21, 293, 39);
 		lblBtn_Startgame.setBorder(new LineBorder(new Color(192, 192, 192)));
-		lblBtn_Startgame.setHorizontalTextPosition(SwingConstants.LEFT);
+		lblBtn_Startgame.setHorizontalTextPosition(SwingConstants.RIGHT);
 		lblBtn_Startgame.setIconTextGap(5);
 		lblBtn_Startgame.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		lblBtn_Startgame.addMouseListener(new LabelButtons(this).createMouseListener()); 
 		
 		mainPanel.add(lblBtn_Startgame);
 		
-		lblBtn_Endgame = new JLabel("Exit", SwingConstants.RIGHT);
+		lblBtn_Endgame = new JLabel("Exit", SwingConstants.CENTER);
 		lblBtn_Endgame.setName("exitBtn");
 		lblBtn_Endgame.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Exit Sign-32.png")));
 		lblBtn_Endgame.setOpaque(true);
 		lblBtn_Endgame.setIconTextGap(5);
-		lblBtn_Endgame.setHorizontalTextPosition(SwingConstants.LEFT);
+		lblBtn_Endgame.setHorizontalTextPosition(SwingConstants.RIGHT);
 		lblBtn_Endgame.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblBtn_Endgame.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		lblBtn_Endgame.setBorder(new LineBorder(new Color(192, 192, 192)));
@@ -213,12 +213,12 @@ public class MainMenu extends JFrame {
 		
 		mainPanel.add(lblBtn_Endgame);
 		
-		lblBtn_Loadgame = new JLabel("Load the last played game", SwingConstants.RIGHT);
+		lblBtn_Loadgame = new JLabel("Load the last played game", SwingConstants.CENTER);
 		lblBtn_Loadgame.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Explosion-load32.png")));
 		lblBtn_Loadgame.setOpaque(true);
 		lblBtn_Loadgame.setName("loadBtn");
 		lblBtn_Loadgame.setIconTextGap(5);
-		lblBtn_Loadgame.setHorizontalTextPosition(SwingConstants.LEFT);
+		lblBtn_Loadgame.setHorizontalTextPosition(SwingConstants.RIGHT);
 		lblBtn_Loadgame.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblBtn_Loadgame.setBorder(new LineBorder(new Color(192, 192, 192)));
 		lblBtn_Loadgame.setBounds(100, 208, 293, 39);
@@ -229,12 +229,12 @@ public class MainMenu extends JFrame {
 		else lblBtn_Loadgame.setEnabled(false);
 		mainPanel.add(lblBtn_Loadgame);
 		
-		lblBtn_Scoreboard = new JLabel("Points", SwingConstants.RIGHT);
+		lblBtn_Scoreboard = new JLabel("Points", SwingConstants.CENTER);
 		lblBtn_Scoreboard.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Ratings-32.png")));
 		lblBtn_Scoreboard.setOpaque(true);
 		lblBtn_Scoreboard.setName("recordsBtn");
 		lblBtn_Scoreboard.setIconTextGap(5);
-		lblBtn_Scoreboard.setHorizontalTextPosition(SwingConstants.LEFT);
+		lblBtn_Scoreboard.setHorizontalTextPosition(SwingConstants.RIGHT);
 		lblBtn_Scoreboard.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblBtn_Scoreboard.setBorder(new LineBorder(new Color(192, 192, 192)));
 		lblBtn_Scoreboard.setBounds(100, 258, 293, 39);
