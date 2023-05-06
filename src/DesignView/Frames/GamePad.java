@@ -360,7 +360,7 @@ public class GamePad extends JFrame {
 			@Override
 			public void run() {
 				JOptionPane.showMessageDialog(null,
-						"Unfortunately, you lost. You will enter the main menu to create a new game",
+						"You lost. You will enter the main menu to create a new game",
 						"Play again",
 						JOptionPane.INFORMATION_MESSAGE);
 				MainMenu.main(null);
@@ -401,20 +401,20 @@ public class GamePad extends JFrame {
 			// UnicodeText: Persian (New Game)
 			gameStatus += "new game ";
 
-		// UnicodeText: Persian (Dar Zamine)
-		gameStatus += "On Earth";
+//		// UnicodeText: Persian (Dar Zamine)
+//		gameStatus += "On Earth";
 		gameStatus += mineWidth;
 
-		// UnicodeText: Persian (Dar)
-		gameStatus += " At";
+//		// UnicodeText: Persian (Dar)
+//		gameStatus += " At";
 		gameStatus += mineHeight;
 
-		// UnicodeText: Persian (Ba)
-		gameStatus += " With ";
+//		// UnicodeText: Persian (Ba)
+//		gameStatus += " With ";
 		gameStatus += minePercentage;
 
-		// UnicodeText: Persian (Ba Darsad Min)
-		gameStatus += " The percentage of mine)";
+//		// UnicodeText: Persian (Ba Darsad Min)
+//		gameStatus += "The percentage of mine";
 
 		lblGameStatus.setText(PersianNumeric.toPersianNumberic(gameStatus));
 

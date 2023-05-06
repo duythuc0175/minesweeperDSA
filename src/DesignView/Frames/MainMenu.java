@@ -144,8 +144,7 @@ public class MainMenu extends JFrame {
 
 
 
-		lblNewLabel_4 = new JLabel("<html><body style='text-align:center;'>The length of the playground (maximum 35)" +
-				"</body></html>");
+		lblNewLabel_4 = new JLabel("Length(maximum 35)");
 		lblNewLabel_4.setForeground(Color.DARK_GRAY);
 		lblNewLabel_4.setBounds(90, 65, 220, 20);
 		mainPanel.add(lblNewLabel_4);
@@ -158,8 +157,7 @@ public class MainMenu extends JFrame {
 		
 		mainPanel.add(minerWSeter);
 
-		label = new JLabel("<html><body style='text-align:center;'>Width of the playground (maximum 25)" +
-				"</body></html>");
+		label = new JLabel("Width(maximum 25)");
 		label.setForeground(Color.DARK_GRAY);
 		label.setBounds(90, 87, 220, 20);
 		mainPanel.add(label);
@@ -242,8 +240,8 @@ public class MainMenu extends JFrame {
 		lblBtn_Scoreboard.addMouseListener(new LabelButtons(this).createMouseListener());
 		mainPanel.add(lblBtn_Scoreboard);
 
-		label_2 = new JLabel("<html><body style='text-align:center;'><div>After changing the values of the above " +
-				"settings</div><div>Press the Enter key</div></body></html>");
+		label_2 = new JLabel("After changing the values of the above " +
+				"settings");
 		label_2.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Error-16.png")));
 		label_2.setBorder(new MatteBorder(1, 0, 0, 0, (Color) Color.LIGHT_GRAY));
 		label_2.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -253,7 +251,6 @@ public class MainMenu extends JFrame {
 		label_2.setPreferredSize(new Dimension(293, 50));
 		label_2.setBounds(100, 138, 293, 50);
 		mainPanel.add(label_2);
-
 		lblnbsp = new JLabel("<html><body style='text-align:right;'>\r\nTo enter characters and punctuation marks on " +
 				"game board cells, use the <b>Red Flag</b> keyboard layout.\r\n</body></html>");
 		lblnbsp.setIcon(new ImageIcon(MainMenu.class.getResource("/DesignView/Images/Flag-16.png")));
