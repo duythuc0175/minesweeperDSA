@@ -218,7 +218,7 @@ public class RegisterRecord extends JDialog {
 	}// </editor-fold>
 
 	private void txtPlayerNameActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 
 	}
 
@@ -237,7 +237,7 @@ public class RegisterRecord extends JDialog {
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 				dispose();
 	}
 
