@@ -19,7 +19,7 @@ public class IconProvider {
 			case BombIcon48:
 				return new ImageIcon(generateURL("Bomb With Timer.png"));	
 			case Mine16:
-				return new ImageIcon(generateURL("Self-Destruct Button-16.png"));
+				return new ImageIcon(generateURL("Self-Destruct Button-161.png"));
 			case Mine24:
 				return new ImageIcon(generateURL("Self-Destruct Button-24.png"));
 			case Mine32:
