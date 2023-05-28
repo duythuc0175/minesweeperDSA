@@ -2,6 +2,7 @@ package DesignView.Frames;
 
 import javax.swing.*;
 
+import DesignView.RecordHandler.GameDialog;
 import DesignView.RecordHandler.GameRecords;
 import DesignView.RecordHandler.RecordItem;
 
@@ -129,14 +130,14 @@ public class GUI extends JDialog {
 		jButton2.setBackground(new java.awt.Color(255, 255, 255));
 		jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 		jButton2.setForeground(new java.awt.Color(0, 0, 0));
-		jButton2.setText("Exit");
+		jButton2.setText("Record");
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
 			}
 		});
 
-		jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\thucc\\Downloads\\MineSweeper\\game (1) (1)\\src\\DesignView\\Images\\time-record (3).png")); // NOI18N
+
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1.setLayout(jPanel1Layout);
@@ -235,8 +236,9 @@ public class GUI extends JDialog {
 
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-
-				dispose();
+		dispose();
+		GameDialog gameDialog = new GameDialog();
+		gameDialog.setVisible(true);
 	}
 
 	public GUI(int score) {
