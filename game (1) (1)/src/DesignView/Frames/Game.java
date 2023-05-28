@@ -29,7 +29,8 @@ public class Game extends JFrame {
         initUI();
         
     }
-    
+    public GUI name = new GUI();
+
     private void initUI() throws IOException {
 
         bUndo = new JButton("Undo");
@@ -44,7 +45,7 @@ public class Game extends JFrame {
         statusPanel = new JPanel();
         statusbar = new JLabel("Flags Left");
         textArea = new JTextArea();
-        textArea.setText("Input your name here...");
+        textArea.setText(String.valueOf(name.getRegistredName()));
         statusPanel.add(statusbar, BorderLayout.NORTH);
         statusPanel.add(textArea, BorderLayout.SOUTH);
         add(statusPanel, BorderLayout.SOUTH);
