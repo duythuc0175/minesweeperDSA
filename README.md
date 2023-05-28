@@ -14,7 +14,7 @@ flagged cells, but can undo the 3rd flagged cell, which would count as the user'
 - The game status is automatically saved when the user exits out the window, and is given the option of 
 whether they want to restore previous status or start a new game when the game is reopened.
 
--On the Mac, right click is clicking the keypad with 2 fingers.
+
 
 ## Rules of the game: 
 
