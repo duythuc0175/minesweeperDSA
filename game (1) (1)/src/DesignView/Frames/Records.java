@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 
 import DesignView.Components.IconProvider;
 import DesignView.Components.IconProvider.GameIconSet;
-import DesignView.RecordHandler.GameRecords;
+//import DesignView.RecordHandler.GameRecords;
 import DesignView.Components.ImagePanel;
 import javax.swing.border.MatteBorder;
 
@@ -30,7 +30,7 @@ import javax.swing.ListSelectionModel;
 public class Records extends JDialog {
 
 
-	private JTable table;
+	private static JTable table;
 	private JLabel lblNewLabel;
 	static Records dialog;
 	private JLabel lblNoItem;
@@ -43,6 +43,9 @@ public class Records extends JDialog {
 			dialog = new Records();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
+
+			// Call the printText() method
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -63,19 +66,19 @@ public class Records extends JDialog {
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setSelectionBackground(Color.WHITE);
 		table.setRowHeight(25);
-		table.setShowGrid(false);
-		table.setShowVerticalLines(false);
-		table.setOpaque(false);
+		table.setShowGrid(true);
+		table.setShowVerticalLines(true);
+		table.setOpaque(true);
 		table.setSelectionForeground(new Color(51, 153, 255));
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Score", "Name"}) {
 			Class[] columnTypes = new Class[] {
-				Integer.class, String.class
+					Integer.class, String.class
 			};
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
 			boolean[] columnEditables = new boolean[] {
-				false, false
+					true, true
 			};
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
@@ -84,35 +87,35 @@ public class Records extends JDialog {
 		// Next 3 lines brings contents to center
 		DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
 		centerRenderer.setHorizontalAlignment( JLabel.CENTER );
-		centerRenderer.setOpaque(false);
+		centerRenderer.setOpaque(true);
 
 		table.getColumnModel().getColumn(0).setCellRenderer( centerRenderer );
 		table.getColumnModel().getColumn(1).setCellRenderer( centerRenderer );
-		
+
 		table.getColumnModel().getColumn(0).setPreferredWidth(126);
 		table.getColumnModel().getColumn(1).setPreferredWidth(149);
 		table.setBounds(10, 62, 427, 335);
 
-		
+
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(IconProvider.getIconResource(GameIconSet.Score32));
 		lblNewLabel.setBounds(397, 15, 32, 32);
 
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Points");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_1.setForeground(Color.BLACK);
 		lblNewLabel_1.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblNewLabel_1.setBounds(350, 15, 42, 14);
 
-		
+
 		JLabel lblNewLabel_2 = new JLabel("<html>\r\n<body><p style=\"margin-right:28px\">You can see the time record of the games from this section</p></body>\r\n</html>");
 		lblNewLabel_2.setVerticalAlignment(SwingConstants.TOP);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel_2.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.LIGHT_GRAY));
 		lblNewLabel_2.setBounds(14, 29, 413, 23);
 
-		
+
 		lblNoItem = new JLabel("No items have been added yet");
 		lblNoItem.setForeground(Color.DARK_GRAY);
 		lblNoItem.setBounds(155, 197, 137, 14);
@@ -135,27 +138,28 @@ public class Records extends JDialog {
 				getRootPane().setDefaultButton(okButton);
 			}
 		}
-		
-		loadRecords();
+
+//		loadRecords();
 	}
-	
+
 	/**
 	 * Load records into view
 	 */
-	void loadRecords(){
-		if (!(GameRecords.getRecordItems().size() == 0)){
-			lblNoItem.setVisible(false);
-			for(int i = 0; i < GameRecords.getRecordItems().size(); i++){
-				
-				 String name = GameRecords.getRecordItems().get(i).getName();
-				 int score = GameRecords.getRecordItems().get(i).getRecord();
-					
-				 Object[] row = { score, name};
-	
-				 DefaultTableModel model = (DefaultTableModel) table.getModel();
-	
-				 model.addRow(row);
-			}
-		}
-	}
+//	void loadRecords(){
+//		if (!(GameRecords.getRecordItems().size() == 0)){
+//			lblNoItem.setVisible(true);
+//			for(int i = 0; i < GameRecords.getRecordItems().size(); i++){
+//
+//				String name = GameRecords.getRecordItems().get(i).getName();
+//				int score = GameRecords.getRecordItems().get(i).getRecord();
+//
+//				Object[] row = { score, name};
+//
+//				DefaultTableModel model = (DefaultTableModel) table.getModel();
+//
+//				model.addRow(row);
+//			}
+//		}
+//	}
+
 }

@@ -5,13 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9eef9c3-1fc6-4dc4-871c-0c905d0c93c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game (1) (1)/src/DesignView/RecordHandler/GameDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game (1) (1)/src/DesignView/Frames/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/game (1) (1)/src/DesignView/Frames/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game (1) (1)/src/DesignView/Frames/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/game (1) (1)/src/DesignView/Frames/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game (1) (1)/src/DesignView/Frames/Records.java" beforeDir="false" afterPath="$PROJECT_DIR$/game (1) (1)/src/DesignView/Frames/Records.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game (1) (1)/src/DesignView/RecordHandler/GameRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/game (1) (1)/src/DesignView/RecordHandler/GameRecords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game (1) (1)/src/DesignView/RecordHandler/RecordItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/game (1) (1)/src/DesignView/RecordHandler/RecordItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game (1) (1)/src/DesignView/SaveGame/GameSave.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game (1) (1)/src/DesignView/SaveGame/SavingElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/Records$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/Records$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/Records$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/Records$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/Records.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/Frames/Records.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/SaveGame/GameSave.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/SaveGame/SavingElement$cellStyle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/DesignView/SaveGame/SavingElement.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/records.txt" beforeDir="false" afterPath="$PROJECT_DIR$/records.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +58,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/thucc/Downloads/AbsoluteLayout-RELEASE170.jar",
     "node.js.detected.package.eslint": "true",
@@ -38,6 +68,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -49,7 +80,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685264255768</updated>
-      <workItem from="1685264257350" duration="1461000" />
+      <workItem from="1685264257350" duration="10408000" />
+      <workItem from="1685281138109" duration="3511000" />
+      <workItem from="1685292720471" duration="4196000" />
     </task>
     <task id="LOCAL-00001" summary="undo">
       <created>1685264880678</created>
@@ -65,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685265000316</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="nhap ten">
+      <created>1685266042563</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685266042563</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,6 +113,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="undo" />
-    <option name="LAST_COMMIT_MESSAGE" value="undo" />
+    <MESSAGE value="nhap ten" />
+    <option name="LAST_COMMIT_MESSAGE" value="nhap ten" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

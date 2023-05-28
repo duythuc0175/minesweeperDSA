@@ -30,12 +30,12 @@ public class Board extends JPanel implements ActionListener {
 	    
 	    private final int CELL_SIZE = 15;
 	    private final int N_MINES = 10;
-	    private static int N_ROWS = 16;
-	    private static int N_COLS = 16;
+	    private static int N_ROWS = 16+10;
+	    private static int N_COLS = 16+10;
 	    private static String CELL_SPLITTER = " - ";
 	    private static String OBJECT_SPLITTER = "$";
-	    private final int BOARD_WIDTH = N_ROWS * CELL_SIZE + 1;
-	    private final int BOARD_HEIGHT = N_COLS * CELL_SIZE + 1;
+	    private final int BOARD_WIDTH = N_ROWS * CELL_SIZE + 10;
+	    private final int BOARD_HEIGHT = N_COLS * CELL_SIZE + 10;
 	    private int minesLeft;//keeps track of how many mines are left based on what user has flagged
 	    //2D array to represent game board
 	    protected static Cell[][] gameBoard;
