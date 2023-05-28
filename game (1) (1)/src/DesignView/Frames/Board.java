@@ -56,6 +56,7 @@ public class Board extends JPanel implements ActionListener {
 	    private static String STATUS_FILE = "Status.txt";
 	    
 	    private Stack gameSteps = new Stack();
+        public static GUI name= new GUI();
 
 	    
 	    //Constructor
@@ -147,12 +148,9 @@ public class Board extends JPanel implements ActionListener {
     protected static void saveGameStatus2File() throws IOException {
         String userName = "";
         //lets user know that 
-        if ("".equals(textArea.getText()) || textArea.getText().equals("Input your name here...")) {
-            JOptionPane.showMessageDialog(null, "We gave you a default user name, you may input your name next time.");
-            userName = "Default user";
-        } else {
-            userName = textArea.getText();
-        }
+
+            userName = String.valueOf(name.getRegistredName());
+
            
         
         if (gameBoard.length == 0) {

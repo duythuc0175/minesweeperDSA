@@ -23,8 +23,8 @@ public class GUI extends JDialog {
 	private static String registredName;
 	private static int registredScore;
 
-	public boolean getRegistredName(){
-		return registredName.isEmpty();
+	public String getRegistredName(){
+		return registredName;
 	}
 
 
