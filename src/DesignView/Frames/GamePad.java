@@ -398,23 +398,23 @@ public class GamePad extends JFrame {
 			// UnicodeText: Persian (Edame)
 			gameStatus += "Continue the game ";
 		else
-			// UnicodeText: Persian (New Game)
-			gameStatus += "new game ";
-
-		// UnicodeText: Persian (Dar Zamine)
-		gameStatus += "On Earth ";
-		gameStatus += mineWidth;
-
-		// UnicodeText: Persian (Dar)
-		gameStatus += " At ";
-		gameStatus += mineHeight;
-
-		// UnicodeText: Persian (Ba)
-		gameStatus += " Width ";
-		gameStatus += minePercentage;
-
-		// UnicodeText: Persian (Ba Darsad Min)
-		gameStatus += " The percentage of mine )";
+		// UnicodeText: Persian (New Game)
+		gameStatus += "new game ";
+//
+//		// UnicodeText: Persian (Dar Zamine)
+//		gameStatus += "On Earth ";
+//		gameStatus += mineWidth;
+//
+//		// UnicodeText: Persian (Dar)
+//		gameStatus += " At ";
+//		gameStatus += mineHeight;
+//
+//		// UnicodeText: Persian (Ba)
+//		gameStatus += " Width ";
+//		gameStatus += minePercentage;
+//
+//		// UnicodeText: Persian (Ba Darsad Min)
+//		gameStatus += " The percentage of mine )";
 
 		lblGameStatus.setText(PersianNumeric.toPersianNumberic(gameStatus));
 
@@ -422,6 +422,11 @@ public class GamePad extends JFrame {
 
 	/**
 	 * Shows entire mines in the gamepad
+	 */
+
+
+	/**
+	 * Show entire flowers in the game
 	 */
 	public static void showMines() {
 
@@ -447,10 +452,6 @@ public class GamePad extends JFrame {
 			}
 		}
 	}
-
-	/**
-	 * Show entire flowers in the game
-	 */
 	public static void showFlowers() {
 
 		for (Component xButton : pnlGameMines.getComponents()) {
@@ -518,57 +519,6 @@ public class GamePad extends JFrame {
 	 * Creates the scene of the game, puts the buttons in the scene, brings
 	 * buttons to center of the pad, and the makes the Frame center-screen
 	 */
-	private void createMinesScene() {
-
-		if (!isLoadedGame) {
-
-			// +1 show hgap size:
-			int panelBoundWidth = (mineWidth + 1) * buttonSizePixel;
-			// +1 show vgap size:
-			int panelBoundHeight = (mineHeight + 1) * buttonSizePixel;
-
-			// 20 means: 2 * 10 = 2 * margin from table
-			// 40 + 65 means sizes of the footer and header
-			setSize(new Dimension(panelBoundWidth + 20, panelBoundHeight + 40 + 65));
-
-			int bombCount = (int) ((float) (mineHeight * mineWidth) * ((float) (minePercentage / 100f)));
-			mineList.clear();
-			// Adding bomb(true) and non-bomb(false) items to the item list.
-			for (int i = 0; i < mineHeight * mineWidth; i++) {
-				if (i < bombCount)
-					mineList.add(true);
-				else
-					mineList.add(false);
-
-			}
-			Collections.shuffle(mineList);
-
-			// Set Panel size
-			pnlGameMines.setBounds(0, 0, panelBoundWidth, panelBoundHeight);
-
-			int freeHorizonalSpace = (getSize().width - 20) - pnlGameMines.getSize().width;
-			int freeVerticalSpace = (getSize().height - 40 - 65) - pnlGameMines.getSize().height;
-			if (freeVerticalSpace == 0)
-				freeVerticalSpace = 10;
-
-			pnlGameMines.setBounds(freeHorizonalSpace / 2, freeVerticalSpace / 2, panelBoundWidth, panelBoundHeight);
-
-			// rows-columns-hgap-vgap
-			pnlGameMines.setLayout(new GridLayout(mineHeight, mineWidth, 1, 1));
-
-			// bring form to center screen
-			setLocationRelativeTo(null);
-
-			for (int i = 0; i < mineHeight * mineWidth; i++) {
-				MineButton button = new MineButton(mineWidth, mineHeight);
-				button.setVerticalAlignment(SwingConstants.CENTER);
-				button.setHorizontalAlignment(SwingConstants.CENTER);
-				button.setName(String.valueOf(i));
-				pnlGameMines.add(button);
-			}
-		} else
-			loadSavedGame();
-	}
 
 	/**
 	 * Loads saved game form 'save.ser' serialized object
@@ -642,6 +592,57 @@ public class GamePad extends JFrame {
 
 			pnlGameMines.add(button);
 		}
+	}
+	private void createMinesScene() {
+
+		if (!isLoadedGame) {
+
+			// +1 show hgap size:
+			int panelBoundWidth = (mineWidth + 1) * buttonSizePixel;
+			// +1 show vgap size:
+			int panelBoundHeight = (mineHeight + 1) * buttonSizePixel;
+
+			// 20 means: 2 * 10 = 2 * margin from table
+			// 40 + 65 means sizes of the footer and header
+			setSize(new Dimension(panelBoundWidth + 20, panelBoundHeight + 40 + 65));
+
+			int bombCount = (int) ((float) (mineHeight * mineWidth) * ((float) (minePercentage / 100f)));
+			mineList.clear();
+			// Adding bomb(true) and non-bomb(false) items to the item list.
+			for (int i = 0; i < mineHeight * mineWidth; i++) {
+				if (i < bombCount)
+					mineList.add(true);
+				else
+					mineList.add(false);
+
+			}
+			Collections.shuffle(mineList);
+
+			// Set Panel size
+			pnlGameMines.setBounds(0, 0, panelBoundWidth, panelBoundHeight);
+
+			int freeHorizonalSpace = (getSize().width - 20) - pnlGameMines.getSize().width;
+			int freeVerticalSpace = (getSize().height - 40 - 65) - pnlGameMines.getSize().height;
+			if (freeVerticalSpace == 0)
+				freeVerticalSpace = 10;
+
+			pnlGameMines.setBounds(freeHorizonalSpace / 2, freeVerticalSpace / 2, panelBoundWidth, panelBoundHeight);
+
+			// rows-columns-hgap-vgap
+			pnlGameMines.setLayout(new GridLayout(mineHeight, mineWidth, 1, 1));
+
+			// bring form to center screen
+			setLocationRelativeTo(null);
+
+			for (int i = 0; i < mineHeight * mineWidth; i++) {
+				MineButton button = new MineButton(mineWidth, mineHeight);
+				button.setVerticalAlignment(SwingConstants.CENTER);
+				button.setHorizontalAlignment(SwingConstants.CENTER);
+				button.setName(String.valueOf(i));
+				pnlGameMines.add(button);
+			}
+		} else
+			loadSavedGame();
 	}
 
 	class windowClosingClass extends WindowAdapter {
