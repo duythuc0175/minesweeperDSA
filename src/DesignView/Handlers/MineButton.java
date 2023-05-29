@@ -11,7 +11,7 @@ import javax.swing.border.LineBorder;
 import DesignView.BlockHandler;
 import DesignView.Components.AudioPlayer;
 import DesignView.Components.IconProvider;
-import DesignView.Components.PersianNumeric;
+import DesignView.Components.Numeric;
 import DesignView.Components.AudioPlayer.DefinedAudios;
 import DesignView.Components.IconProvider.GameIconSet;
 import DesignView.Frames.GamePad;
@@ -119,7 +119,7 @@ public class MineButton extends JLabel {
 						for(int i = 0; i < indexes.length; i++) if (GamePad.mineList.get(indexes[i])) bombCount++;
 						
 						if (bombCount != 0){
-							sender.setText(PersianNumeric.toPersianNumberic(String.valueOf(bombCount)));
+							sender.setText(Numeric.toPersianNumberic(String.valueOf(bombCount)));
 						}
 						else{
 							GamePad.freeNearbyBlocks(buttonID, mineWidth, mineHeight);

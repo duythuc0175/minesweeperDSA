@@ -1,25 +1,11 @@
 package DesignView.Frames;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Toolkit;
-
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.MatteBorder;
 
-import DesignView.Components.ImagePanel;
-import DesignView.Components.PersianNumeric;
+import DesignView.Components.Numeric;
 import DesignView.RecordHandler.GameRecords;
 import DesignView.RecordHandler.RecordItem;
 
-import java.awt.Color;
-
-import java.awt.Font;
-import java.awt.ComponentOrientation;
-import java.awt.SystemColor;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -124,7 +110,7 @@ public class RegisterRecord extends JDialog {
 			}
 		});
 		{
-			txtField.setText(PersianNumeric.toPersianNumberic("0"));
+			txtField.setText(Numeric.toPersianNumberic("0"));
 			txtField.setEditable(false);
 		}
 
@@ -244,6 +230,6 @@ public class RegisterRecord extends JDialog {
 	public RegisterRecord(int score) {
 		this();
 		registredScore = score;
-		txtField.setText(PersianNumeric.toPersianNumberic(String.valueOf(registredScore)));
+		txtField.setText(Numeric.toPersianNumberic(String.valueOf(registredScore)));
 	}
 }

@@ -28,7 +28,7 @@ import DesignView.BlockHandler;
 import DesignView.Components.AudioPlayer;
 import DesignView.Components.IconProvider;
 import DesignView.Components.ImagePanel;
-import DesignView.Components.PersianNumeric;
+import DesignView.Components.Numeric;
 import DesignView.Components.AudioPlayer.DefinedAudios;
 import DesignView.Components.IconProvider.GameIconSet;
 import DesignView.Handlers.MineButton;
@@ -208,7 +208,7 @@ public class GamePad extends JFrame {
 		lblGameTime.setForeground(SystemColor.textHighlight);
 		lblGameTime.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblGameTime.setAlignmentX(0.5f);
-		lblGameTime.setText(PersianNumeric.toPersianNumberic(lblGameTime.getText()));
+		lblGameTime.setText(Numeric.toPersianNumberic(lblGameTime.getText()));
 		gameTextBox.add(lblGameTime);
 
 		mainPanel = new ImagePanel(Toolkit.getDefaultToolkit()
@@ -385,7 +385,7 @@ public class GamePad extends JFrame {
 	 */
 	public static void updateTimeTimer() {
 		timeCount++;
-		lblGameTime.setText(PersianNumeric.toPersianNumberic(String.format("%03d", timeCount))
+		lblGameTime.setText(Numeric.toPersianNumberic(String.format("%03d", timeCount))
 				+ " Second");
 	}
 
@@ -402,7 +402,7 @@ public class GamePad extends JFrame {
 			gameStatus += "new game ";
 
 		// UnicodeText: Persian (Dar Zamine)
-		gameStatus += "On Earth";
+/*		gameStatus += "On Earth";
 		gameStatus += mineWidth;
 
 		// UnicodeText: Persian (Dar)
@@ -414,9 +414,9 @@ public class GamePad extends JFrame {
 		gameStatus += minePercentage;
 
 		// UnicodeText: Persian (Ba Darsad Min)
-		gameStatus += " The percentage of mine)";
+		gameStatus += " The percentage of mine)";*/
 
-		lblGameStatus.setText(PersianNumeric.toPersianNumberic(gameStatus));
+		lblGameStatus.setText(Numeric.toPersianNumberic(gameStatus));
 
 	}
 
@@ -505,7 +505,7 @@ public class GamePad extends JFrame {
 				increaseGoodCellCount();
 
 				if (bombCount != 0) {
-					mineButton.setText(PersianNumeric.toPersianNumberic(String.valueOf(bombCount)));
+					mineButton.setText(Numeric.toPersianNumberic(String.valueOf(bombCount)));
 				} else {
 					freeNearbyBlocks(neighbors[counter], w, h);
 				}
@@ -592,7 +592,7 @@ public class GamePad extends JFrame {
 		goodCellCount = saveData.getGoodCellCount();
 		timeCount = saveData.getTimeCount();
 		minePercentage = saveData.getMineTrafic();
-		lblGameTime.setText(PersianNumeric.toPersianNumberic(String.format("%03d", timeCount))
+		lblGameTime.setText(Numeric.toPersianNumberic(String.format("%03d", timeCount))
 				+ " Second");
 
 		startTimer();
