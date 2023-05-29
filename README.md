@@ -1,4 +1,4 @@
-#Minesweeper
+## Minesweeper
 
 A simple implementation of Minesweeper game.
 
