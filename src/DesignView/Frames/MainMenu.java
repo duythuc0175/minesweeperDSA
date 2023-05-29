@@ -7,11 +7,9 @@ import DesignView.Components.ImagePanel;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.FlowLayout;
-import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.border.MatteBorder;
 
@@ -19,19 +17,26 @@ import DesignView.Handlers.*;
 import DesignView.RecordHandler.GameRecords;
 
 import java.awt.Font;
-import javax.swing.ImageIcon;
 import java.awt.Cursor;
 
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.StyledEditorKit;
+import javax.swing.undo.AbstractUndoableEdit;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.CompoundEdit;
+import javax.swing.undo.UndoableEdit;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
 import java.awt.Toolkit;
 import java.awt.ComponentOrientation;
+import java.util.ArrayList;
 
 
 public class MainMenu extends JFrame {
@@ -52,6 +57,7 @@ public class MainMenu extends JFrame {
 	private javax.swing.JLabel lblBtn_Loadgame;
 	private javax.swing.JLabel lblBtn_Scoreboard;
 	private javax.swing.JLabel lblBtn_Startgame;
+	private javax.swing.JLabel ae;
 	private javax.swing.JSpinner minerHSeter;
 	public javax.swing.JSpinner minerPerSeter;
 	private javax.swing.JSpinner minerWSeter;
@@ -106,7 +112,6 @@ public class MainMenu extends JFrame {
 			public void run() {
 				try {
 					MainMenu frame = new MainMenu();
-
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -132,6 +137,7 @@ public class MainMenu extends JFrame {
 		minerWSeter = new javax.swing.JSpinner();
 		minerPerSeter = new javax.swing.JSpinner();
 		lblBtn_Startgame = new javax.swing.JLabel();
+		ae = new javax.swing.JLabel();
 		jPanel4 = new javax.swing.JPanel();
 		jLabel5 = new javax.swing.JLabel();
 		jLabel6 = new javax.swing.JLabel();
@@ -140,7 +146,6 @@ public class MainMenu extends JFrame {
 		lblBtn_Endgame = new javax.swing.JLabel();
 		jPanel6 = new javax.swing.JPanel();
 		jLabel8 = new javax.swing.JLabel();
-
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/DesignView/Images/Explosion-48.png")));
 		setTitle("Minesweeper");
@@ -154,7 +159,7 @@ public class MainMenu extends JFrame {
 
 		jLabel1.setFont(new java.awt.Font("Snap ITC", 1, 18)); // NOI18N
 		jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-		jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\thucc\\Downloads\\MineSweeper\\src\\DesignView\\Images\\Bomb With Timer-32.png")); // NOI18N
+		jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Bomb With Timer-32.png")); // NOI18N
 		jLabel1.setText("Minesweeper Game");
 		jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
@@ -202,7 +207,7 @@ public class MainMenu extends JFrame {
 		lblBtn_Startgame.setFont(new java.awt.Font("OCR A Extended", 0, 14)); // NOI18N
 		lblBtn_Startgame.setForeground(new java.awt.Color(0, 0, 0));
 		lblBtn_Startgame.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblBtn_Startgame.setIcon(new javax.swing.ImageIcon("C:\\Users\\thucc\\Downloads\\MineSweeper\\src\\DesignView\\Images\\Explosion-32.png")); // NOI18N
+		lblBtn_Startgame.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Explosion-32.png")); // NOI18N
 		lblBtn_Startgame.setText("Start");
 		lblBtn_Startgame.setToolTipText("");
 		lblBtn_Startgame.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 192, 192)));
@@ -263,24 +268,26 @@ public class MainMenu extends JFrame {
 
 		jLabel5.setFont(new java.awt.Font("STXihei", 2, 12)); // NOI18N
 		jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-		jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\IdeaProjects\\ProjectDSA\\src\\DesignView\\Images\\Error-16.png")); // NOI18N
+		jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Error-16.png")); // NOI18N
 		jLabel5.setText("<html><body style='text-align:center;'><div>After changing the values of the above settings</div><div>Press the Enter key</div></body></html>");
 		jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 		jLabel5.setIconTextGap(20);
 
 		jLabel6.setFont(new java.awt.Font("STXihei", 2, 12)); // NOI18N
 		jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-		jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\IdeaProjects\\ProjectDSA\\src\\DesignView\\Images\\Flag-16.png")); // NOI18N
+		jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Flag-16.png")); // NOI18N
 		jLabel6.setText("<html><body style='text-align:enter;'> Enter characters and punctuation marks on game board cells, use the <b>Red Flag</b> keyboard layout. </body></html>");
 		jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 		jLabel6.setIconTextGap(15);
+
+
 
 		lblBtn_Loadgame.setBackground(new java.awt.Color(174, 225, 225));
 		lblBtn_Loadgame.setName("loadBtn");
 		lblBtn_Loadgame.setFont(new java.awt.Font("OCR A Extended", 0, 14)); // NOI18N
 		lblBtn_Loadgame.setForeground(new java.awt.Color(0, 0, 0));
 		lblBtn_Loadgame.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblBtn_Loadgame.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\IdeaProjects\\ProjectDSA\\src\\DesignView\\Images\\Explosion-load32.png")); // NOI18N
+		lblBtn_Loadgame.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Explosion-load32.png")); // NOI18N
 		lblBtn_Loadgame.setText("Load the last played game");
 		lblBtn_Loadgame.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 192, 192)));
 		lblBtn_Loadgame.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -296,7 +303,7 @@ public class MainMenu extends JFrame {
 		lblBtn_Scoreboard.setFont(new java.awt.Font("OCR A Extended", 0, 14)); // NOI18N
 		lblBtn_Scoreboard.setForeground(new java.awt.Color(0, 0, 0));
 		lblBtn_Scoreboard.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblBtn_Scoreboard.setIcon(new javax.swing.ImageIcon("C:\\Users\\thucc\\Downloads\\MineSweeper\\src\\DesignView\\Images\\Ratings-32.png")); // NOI18N
+		lblBtn_Scoreboard.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Ratings-32.png")); // NOI18N
 		lblBtn_Scoreboard.setText("Points");
 		lblBtn_Scoreboard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 192, 192)));
 		lblBtn_Scoreboard.setFocusable(false);
@@ -311,7 +318,7 @@ public class MainMenu extends JFrame {
 		lblBtn_Endgame.setFont(new java.awt.Font("OCR A Extended", 0, 14)); // NOI18N
 		lblBtn_Endgame.setForeground(new java.awt.Color(0, 0, 0));
 		lblBtn_Endgame.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblBtn_Endgame.setIcon(new javax.swing.ImageIcon("C:\\Users\\thucc\\Downloads\\MineSweeper\\src\\DesignView\\Images\\Exit Sign-32.png")); // NOI18N
+		lblBtn_Endgame.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Exit Sign-32.png")); // NOI18N
 		lblBtn_Endgame.setText("Exit");
 		lblBtn_Endgame.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 192, 192)));
 		lblBtn_Endgame.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -367,7 +374,7 @@ public class MainMenu extends JFrame {
 
 		jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 488, 540, 10));
 
-		jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\thucc\\Downloads\\MineSweeper\\src\\DesignView\\Images\\Wal (2).jpg")); // NOI18N
+		jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Wal (2).jpg")); // NOI18N
 		jLabel8.setText("jLabel8");
 		jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 500));
 

@@ -148,7 +148,7 @@ public class RegisterRecord extends JDialog {
 			}
 		});
 
-		jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\thucc\\Downloads\\MineSweeper\\src\\DesignView\\Images\\time-record (3).png")); // NOI18N
+		jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Imagess\\time-record (3).png")); // NOI18N
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1.setLayout(jPanel1Layout);
@@ -209,7 +209,7 @@ public class RegisterRecord extends JDialog {
 
 		getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 520, 350));
 
-		jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\thucc\\Downloads\\MineSweeper\\src\\DesignView\\Images\\Wal (2).jpg")); // NOI18N
+		jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\SEM2\\DSAgame\\GameProj1\\src\\DesignView\\Images\\Wal (2).jpg")); // NOI18N
 		jLabel1.setText("jLabel1");
 		getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 530));
 

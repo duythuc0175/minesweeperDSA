@@ -3,12 +3,9 @@ package DesignView.Frames;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Color;
@@ -19,11 +16,8 @@ import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
+
 import DesignView.BlockHandler;
 import DesignView.Components.AudioPlayer;
 import DesignView.Components.IconProvider;
@@ -35,19 +29,19 @@ import DesignView.Handlers.MineButton;
 import DesignView.SaveGame.GameSave;
 import DesignView.SaveGame.SavingElement;
 import DesignView.SaveGame.SavingElement.cellStyle;
-import javax.swing.ImageIcon;
+
 import java.awt.Component;
 import java.awt.Dimension;
 
-import javax.swing.Box;
 import java.awt.SystemColor;
-import javax.swing.JOptionPane;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
+import java.util.Timer;
+import  java.util.Stack;
 public class GamePad extends JFrame {
 
+	private static Stack<boolean[][]> undoList;
 	// Size of the buttons on the scene
 	private final int buttonSizePixel = 24;
 
@@ -61,6 +55,7 @@ public class GamePad extends JFrame {
 
 	// Game Time counter
 	private static int timeCount = 0;
+	private int remainingMines = 0;
 
 	// Determines that if the game is NewGame or LoadedGame
 	private boolean isLoadedGame = false;
@@ -101,6 +96,7 @@ public class GamePad extends JFrame {
 	private JLabel lblGameStatus;
 	private Component horizontalStrut_4;
 	private static JPanel pnlGameMines;
+	private JButton undo;
 
 	/*
 	 * Game timers, and update timer task definition
@@ -108,13 +104,11 @@ public class GamePad extends JFrame {
 	static Timer timer;
 	static Timer delayedGameoverForm;
 	static TimerTask task;
-
 	/*
 	 * This list determines that a specified button in the game is a mine or an
 	 * empty slot
 	 */
 	public static ArrayList<Boolean> mineList = new ArrayList<Boolean>();
-
 	/**
 	 * Launch the application.
 	 */
@@ -129,6 +123,7 @@ public class GamePad extends JFrame {
 				}
 			}
 		});
+
 	}
 
 	/*
@@ -138,8 +133,8 @@ public class GamePad extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public GamePad() {
 
+	public GamePad() {
 		initalize();
 		setIconImage(
 				Toolkit.getDefaultToolkit().getImage(GamePad.class.getResource("/DesignView/Images/Explosion-16.png")));
@@ -149,7 +144,7 @@ public class GamePad extends JFrame {
 		setMinimumSize(new Dimension(400, 450));
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
+		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -162,7 +157,14 @@ public class GamePad extends JFrame {
 		gameNameBox = Box.createHorizontalBox();
 		headerPanel.add(gameNameBox, BorderLayout.EAST);
 
-		lblGameStatus = new JLabel("Variable text");
+		undo = new JButton("Undo");
+		undo.setForeground(new Color(51, 153, 255));
+		undo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		gameNameBox.add(undo);
+
+
+
+		lblGameStatus = new JLabel("Goodluck");
 		lblGameStatus.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblGameStatus.setForeground(Color.GRAY);
 		gameNameBox.add(lblGameStatus);
@@ -234,6 +236,7 @@ public class GamePad extends JFrame {
 		label.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		footerPanel.add(label);
 
+
 	}
 
 	/**
@@ -289,6 +292,7 @@ public class GamePad extends JFrame {
 		timeCount = 0;
 		isLoadedGame = false;
 		_isGameStarted = false;
+
 	}
 
 	public static boolean isGameStatred() {
@@ -337,10 +341,8 @@ public class GamePad extends JFrame {
 					frame.setVisible(false);
 				RegisterRecord recordRegisterForm = new RegisterRecord(timeCount);
 				recordRegisterForm.setVisible(true);
-
 			}
 		}, 2000);
-
 	}
 
 	/**
@@ -446,6 +448,7 @@ public class GamePad extends JFrame {
 
 			}
 		}
+
 	}
 
 	/**
@@ -466,7 +469,6 @@ public class GamePad extends JFrame {
 			}
 		}
 	}
-
 	/**
 	 * Checks if the block doesn't have any mines nearby This function works in
 	 * a recursive way
@@ -478,41 +480,7 @@ public class GamePad extends JFrame {
 	 * @param h
 	 *            height of the scene
 	 */
-	public static void freeNearbyBlocks(int id, int w, int h) {
 
-		int[] neighbors = BlockHandler.getNeighborIndexes(id, w, h);
-
-		for (int counter = 0; counter < neighbors.length; counter++) {
-
-			MineButton mineButton = (MineButton) pnlGameMines.getComponents()[neighbors[counter]];
-
-			// Check if not mine and not selected
-			if (!mineList.get(neighbors[counter]) && !mineButton.getName().contains(",selected")) {
-
-				int bombCount = 0;
-				int[] innerNeighbors = BlockHandler.getNeighborIndexes(neighbors[counter], w, h);
-				for (int i = 0; i < innerNeighbors.length; i++)
-					if (mineList.get(innerNeighbors[i]))
-						bombCount++;
-
-				int buttonID = MineButton.findMineID(mineButton.getName());
-				mineButton.setName(buttonID + ",selected");
-				mineButton.setBackground(new Color(238, 255, 204));
-				mineButton.setIcon(null);
-				mineButton.setForeground(new Color(85, 128, 0));
-				mineButton.setBorder(new LineBorder(Color.lightGray));
-
-				increaseGoodCellCount();
-
-				if (bombCount != 0) {
-					mineButton.setText(PersianNumeric.toPersianNumberic(String.valueOf(bombCount)));
-				} else {
-					freeNearbyBlocks(neighbors[counter], w, h);
-				}
-			}
-
-		}
-	}
 
 	/**
 	 * Creates the scene of the game, puts the buttons in the scene, brings
@@ -568,6 +536,41 @@ public class GamePad extends JFrame {
 			}
 		} else
 			loadSavedGame();
+	}
+	public static void freeNearbyBlocks(int id, int w, int h) {
+
+		int[] neighbors = BlockHandler.getNeighborIndexes(id, w, h);
+
+		for (int counter = 0; counter < neighbors.length; counter++) {
+
+			MineButton mineButton = (MineButton) pnlGameMines.getComponents()[neighbors[counter]];
+
+			// Check if not mine and not selected
+			if (!mineList.get(neighbors[counter]) && !mineButton.getName().contains(",selected")) {
+
+				int bombCount = 0;
+				int[] innerNeighbors = BlockHandler.getNeighborIndexes(neighbors[counter], w, h);
+				for (int i = 0; i < innerNeighbors.length; i++)
+					if (mineList.get(innerNeighbors[i]))
+						bombCount++;
+
+				int buttonID = MineButton.findMineID(mineButton.getName());
+				mineButton.setName(buttonID + ",selected");
+				mineButton.setBackground(new Color(238, 255, 204));
+				mineButton.setIcon(null);
+				mineButton.setForeground(new Color(85, 128, 0));
+				mineButton.setBorder(new LineBorder(Color.lightGray));
+
+				increaseGoodCellCount();
+
+				if (bombCount != 0) {
+					mineButton.setText(PersianNumeric.toPersianNumberic(String.valueOf(bombCount)));
+				} else {
+					freeNearbyBlocks(neighbors[counter], w, h);
+				}
+			}
+
+		}
 	}
 
 	/**

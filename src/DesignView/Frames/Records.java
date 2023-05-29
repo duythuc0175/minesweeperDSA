@@ -142,24 +142,24 @@ public class Records extends JDialog {
 		
 		loadRecords();
 	}
-	
-	/**
-	 * Load records into view
-	 */
 	void loadRecords(){
 		if (!(GameRecords.getRecordItems().size() == 0)){
 			lblNoItem.setVisible(false);
 			for(int i = 0; i < GameRecords.getRecordItems().size(); i++){
-				
-				 String name = GameRecords.getRecordItems().get(i).getName();
-				 int score = GameRecords.getRecordItems().get(i).getRecord();
-					
-				 Object[] row = { score, name};
-	
-				 DefaultTableModel model = (DefaultTableModel) table.getModel();
-	
-				 model.addRow(row);
+
+				String name = GameRecords.getRecordItems().get(i).getName();
+				int score = GameRecords.getRecordItems().get(i).getRecord();
+
+				Object[] row = { score, name};
+
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+
+				model.addRow(row);
 			}
 		}
 	}
+	/**
+	 * Load records into view
+	 */
+
 }

@@ -14,7 +14,8 @@ import DesignView.Frames.MainMenu;
 import DesignView.Frames.Records;
 
 public class LabelButtons {
-	
+
+	private GamePad Undo;
 	private MainMenu mainFrame;
 	private int passMinerW;
 	private int passMinerH;
@@ -23,7 +24,12 @@ public class LabelButtons {
 	public LabelButtons(MainMenu arg){
 		mainFrame = arg;
 	}
-	
+
+	public LabelButtons(GamePad arg ){
+		Undo = arg;
+				
+	}
+
 	private void updateUpcomingGameSettings(){
 	
 		passMinerH = mainFrame.getMinerHSeterValue();
@@ -120,6 +126,8 @@ public class LabelButtons {
 					} catch (InterruptedException e1) {}
 						System.exit(0);
 					break;
+
+
 			}
 			
 		}
